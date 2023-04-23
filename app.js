@@ -112,6 +112,7 @@ let dishes = [
         ingredients: ["beef", "tomato"],
     },
 ];
+
 let todaysSpecialDish = {
     id: 7,
     name: "Elote",
@@ -141,15 +142,23 @@ function findMexicanFood(allDishes) {
 
 // <<<<<<<<<<<<<<<<< MAP & FILTER FUNCTIONS <<<<<<<<<<<<<<<<<
 
+// TODO #2: Filter all dishes for those that have a cuisine type of Italian
 function findItalianFood(allDishes) {
     alert("Searching for Italian dishes...")
-    // TODO #2: Filter all dishes for those that have a cuisine type of Italian
+    let results = allDishes.filter(function (el){
+        if (el.cuisine === "Italian") {
+            return true;
+        } else {
+            return false;
+        }
+    })
     alert("Found all Italian dishes!  Check the console for full output")
+    return results
 }
 
+// TODO #3: Gather user input for a cuisine to search for, then filter for all dishes matching this cuisine type
 function searchCuisines(allDishes) {
     alert("Searching for dishes by cuisine...")
-    // TODO #3: Gather user input for a cuisine to search for, then filter for all dishes matching this cuisine type
     alert("Found all dishes matching the cuisine search term!  Check the console for full output")
 }
 
