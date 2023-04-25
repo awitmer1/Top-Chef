@@ -198,7 +198,7 @@ function generateCuisineDishName(allDishes) {
 
 // <<<<<<<<<<<<<<<<< EMAIL AND TEXT MARKETING MESSAGES <<<<<<<<<<<<<<<<<
 
-function emailMessage(dishOfTheDay) {
+function emailMessage(todaysSpecialDish) {
     // TODO #6: Adjust the message below so the cuisine and name of the dish are displayed
     let message = `
     Hello valued customer!
@@ -206,7 +206,7 @@ function emailMessage(dishOfTheDay) {
     Thank you for subscribing to email alert messages!
     Today's Dish of the day is:
 
-    <DISH OF THE DAY HERE>
+   ${todaysSpecialDish.cuisine} ${todaysSpecialDish.name}
 
     We hope to see you in soon!
 
@@ -219,7 +219,7 @@ function emailMessage(dishOfTheDay) {
     return message;
 }
 
-function textMessage(dishOfTheDay) {
+function textMessage(todaysSpecialDish) {
     // TODO #6: Adjust the message below so the cuisine and name of the dish are displayed
     let message = `
     Master Chef -
@@ -227,7 +227,7 @@ function textMessage(dishOfTheDay) {
     This is an automated text message alert.
     Today's Dish of the day is:
 
-    <DISH OF THE DAY HERE>
+    ${todaysSpecialDish.cuisine} ${todaysSpecialDish.name}
 
     We hope to see you in soon!
 
@@ -294,10 +294,15 @@ function runApp(allDishes, specialDish) {
         case "6":
             // TODO #8: Call the appropriate function to generate the marketing text message.  
             // You will need to provide today's dish and the appropriate callback function as arguments!
+            let dishOfDayText = textMessage(todaysSpecialDish)
+            console.log(dishOfDayText)
             break
         case "7":
             // TODO #9: Call the appropriate function to generate the marketing email message.  
             // You will need to provide today's dish and the appropriate callback function as arguments!
+            let dishOfDayEmail = emailMessage(todaysSpecialDish)
+            console.log(dishOfDayEmail)
+            break
             break
         case "Exit":
             alert("Thank you for using the Recipe Searching Application!  Goodbye!")
